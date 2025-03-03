@@ -1,0 +1,14 @@
+# Meta PyTorch
+torch
+torchvision
+torchaudio
+
+# Common
+black
+black[jupyter]
+jupyterlab
+matplotlib
+polars
+pytest
+pylint
+requests
