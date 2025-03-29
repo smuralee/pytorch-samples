@@ -4,11 +4,11 @@ torchvision
 torchaudio
 
 # Common
-black
 black[jupyter]
 jupyterlab
 matplotlib
 polars
+pyarrow
 pytest
 pylint
 requests
