@@ -10,7 +10,22 @@ import torch
 
 
 DTYPE = torch.float
-device = torch.device("cpu")
+# Define the device variable
+device = "cpu"
+
+# First, check for Apple silicon (MPS)
+if torch.backends.mps.is_available():
+    device = "mps"
+    print("Using MPS (Apple GPU)")
+# Then, check for NVIDIA CUDA
+elif torch.cuda.is_available():
+    device = "cuda"
+    print("Using CUDA (NVIDIA GPU)")
+# If neither is available, keep the default (CPU)
+else:
+    print("Using CPU")
+
+device = torch.device(device)
 
 # Create random input and output data
 x = torch.linspace(-math.pi, math.pi, 2000, device=device, dtype=DTYPE)
